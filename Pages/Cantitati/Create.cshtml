@@ -1,0 +1,44 @@
+﻿@page
+@model Rusu_Iuliana_ECTS.Pages.Cantitati.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cantitate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cantitate.Denumire" class="control-label"></label>
+                <input asp-for="Cantitate.Denumire" class="form-control" />
+                <span asp-validation-for="Cantitate.Denumire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantitate.Depozit" class="control-label"></label>
+                <input asp-for="Cantitate.Depozit" class="form-control" />
+                <span asp-validation-for="Cantitate.Depozit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantitate.Nrbucati" class="control-label"></label>
+                <input asp-for="Cantitate.Nrbucati" class="form-control" />
+                <span asp-validation-for="Cantitate.Nrbucati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

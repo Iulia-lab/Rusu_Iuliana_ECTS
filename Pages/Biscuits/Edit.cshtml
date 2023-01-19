@@ -1,0 +1,57 @@
+﻿@page
+@model Rusu_Iuliana_ECTS.Pages.Biscuits.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Biscuit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Biscuit.ID" />
+            <div class="form-group">
+                <label asp-for="Biscuit.Denumire" class="control-label"></label>
+                <input asp-for="Biscuit.Denumire" class="form-control" />
+                <span asp-validation-for="Biscuit.Denumire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biscuit.Ingrediente" class="control-label"></label>
+                <input asp-for="Biscuit.Ingrediente" class="form-control" />
+                <span asp-validation-for="Biscuit.Ingrediente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biscuit.Pret" class="control-label"></label>
+                <input asp-for="Biscuit.Pret" class="form-control" />
+                <span asp-validation-for="Biscuit.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biscuit.DataExpirarii" class="control-label"></label>
+                <input asp-for="Biscuit.DataExpirarii" class="form-control" />
+                <span asp-validation-for="Biscuit.DataExpirarii" class="textdanger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biscuit.PublisherID" class="control-label">Publisher Name</label>
+                <select asp-for="Biscuit.PublisherID" class="form-control" asp-items="ViewBag.PublisherID">
+                </select>
+                <span asp-validation-for="Biscuit.PublisherID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

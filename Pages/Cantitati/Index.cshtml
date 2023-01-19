@@ -1,0 +1,48 @@
+﻿@page
+@model Rusu_Iuliana_ECTS.Pages.Cantitati.IndexModel
+
+@{
+    ViewData["Title"] = "Cantitati";
+}
+
+<h1>Cantitati in depozit</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantitate[0].Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantitate[0].Depozit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantitate[0].Nrbucati)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cantitate) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depozit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nrbucati)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
